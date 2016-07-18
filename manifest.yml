@@ -3,9 +3,14 @@ declared-services:
   conversation-free:
     label: conversation
     plan: free
+  tone-analyzer-standard:
+    label: tone_analyzer
+    plan: standard
 applications:
 - services:
   - conversation-free
+  - tone-analyzer-standard
+  name: conversation-simple-restaurants
   command: npm start
   path: .
   instances: 1

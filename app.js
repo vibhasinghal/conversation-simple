@@ -17,12 +17,14 @@
 'use strict';
 
 require('dotenv').config({silent: true});
+require('json-query');
 
 var express = require('express');  // app server
 var bodyParser = require('body-parser');  // parser for post requests
 var watson = require('watson-developer-cloud');  // watson sdk
 
 var app = express();
+var tone_conversation_addon = require("./addons/tone_conversation_detection_addon.js");
 
 // Bootstrap application settings
 app.use(express.static('./public')); // load UI from public folder
@@ -35,6 +37,15 @@ var conversation = watson.conversation({
   password: process.env.CONVERSATION_PASSWORD || '<password>',
   version_date: '2016-07-11',
   version: 'v1'
+});
+
+//Create the tone_analyzer service wrapper
+var tone_analyzer = watson.tone_analyzer({
+	url: 'https://gateway.watsonplatform.net/tone-analyzer/api',
+	username: process.env.TONE_ANALYZER_USERNAME,
+	password: process.env.TONE_ANALYZER_PASSWORD,  
+	version_date: '2016-05-19',
+	version: 'v3'
 });
 
 // Endpoint to be call from the client side
@@ -50,22 +61,45 @@ app.post('/api/message', function(req, res) {
     workspace_id: workspace,
     context: {}
   };
-  if (req.body) {
-    if (req.body.input) {
-      payload.input = req.body.input;
-    }
-    if (req.body.context) {
-      // The client must maintain context/state
-      payload.context = req.body.context;
-    }
-  }
-  // Send the input to the conversation service
-  conversation.message(payload, function(err, data) {
-    if (err) {
-      return res.status(err.code || 500).json(err);
-    }
-    return res.json(updateMessage(data));
-  });
+	// Extract the input and context from the request, and add it to the payload to be sent to the 
+	// conversation service
+	if (req.body) {
+
+		// INPUT - check for input in the body of the request 
+		if (req.body.input) {
+			payload.input = req.body.input;
+		}else{
+			return new Error('Error: no input provided in request.');
+		}
+		
+		// INPUT - user's input text is whitespace - no intent provided
+		if (!(req.body.input.text).trim().length){
+			return res.json({'output': {'text': 'No input has been provided.  Please state your intent.'}});
+		}
+		
+		// CONTEXT - context/state maintained by client app
+		if (req.body.context) { 		
+			payload.context = req.body.context;				
+			
+			// USER - if there is no user in the context, initialize one and add to the context
+			if(typeof req.body.context.user == 'undefined'){
+				var emptyUser = tone_conversation_addon.initToneContext(tone_analyzer);
+				payload.context = extend(payload.context, { emptyUser });
+				invokeAddOns_Tone(payload,req,res);
+	
+		}
+		else {
+			invokeAddOns_Tone(payload,req,res);
+		}
+              } 
+		// If there is no context, create it and add a user object to it
+		else {
+			payload.context = tone_conversation_addon.initToneContext(tone_analyzer);
+			invokeAddOns_Tone(payload,req,res);
+		}	
+
+	
+	}
 });
 
 /**
@@ -95,8 +129,24 @@ function updateMessage(response) {
       responseText = 'I did not understand your intent';
     }
   }
-  response.output.text = responseText;
+  response.output.text += ". " + responseText;
   return response;
+}
+
+function invokeAddOns_Tone(payload,req,res)
+{
+			tone_conversation_addon.invokeTone(req.body.input.text, 
+					function(tone_payload){
+						tone_conversation_addon.updateUserTone(payload.context.user, tone_payload);
+
+						// Send the input to the conversation service
+						conversation.message(payload, function(err, data) {
+							if (err) {
+								return res.status(err.code || 500).json(err);
+							}
+							return res.json((updateMessage(data)));
+						});
+				});	
 }
 
 module.exports = app;

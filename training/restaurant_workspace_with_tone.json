@@ -1,0 +1,1601 @@
+{
+	"name": "Restaurant Concierge",
+	"created": "2016-07-18T22:44:42.751Z",
+	"intents": [{
+		"intent": "Dietary_considerations",
+		"created": "2016-07-18T22:44:42.751Z",
+		"examples": [{
+			"text": "do you have a kosher menu",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "do you have vegan desserts",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "do you have vegetarian options",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "do you offer gluten free",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "do you offer halal options",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "gluten free entrees",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "I'm vegan",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "tell me about low calorie options",
+			"created": "2016-07-18T22:44:42.751Z"
+		}],
+		"description": null
+	}, {
+		"intent": "Directions",
+		"created": "2016-07-18T22:44:42.751Z",
+		"examples": [{
+			"text": "can you give me directions",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "give me directions",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "how do i find you",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "how do i get to your place",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "how do i get to your restaurant",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "location please",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "what is the address",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "what's your location",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "where are you",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "where are you located",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "which cross streets are you on",
+			"created": "2016-07-18T22:44:42.751Z"
+		}],
+		"description": null
+	}, {
+		"intent": "goodbye",
+		"created": "2016-07-18T22:44:42.751Z",
+		"examples": [{
+			"text": "bye",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "ciao",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "good bye",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "see ya",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "so long",
+			"created": "2016-07-18T22:44:42.751Z"
+		}],
+		"description": null
+	}, {
+		"intent": "Hours_of_operation",
+		"created": "2016-07-18T22:44:42.751Z",
+		"examples": [{
+			"text": "Are you closed new Year's eve",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "Are you closing early today",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "Are you open on Sunday",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "how early do you open on Saturdays",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "how late are you open",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "how late are you open tonight",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "how late are you there",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "what are your hours",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "What time do you close",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "what time do you close on Sunday",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "What time do you close today",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "What time do you open on Saturdays",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "when do you close",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "will you be open Memorial day",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "will you open for christmas",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "will you open on christmas",
+			"created": "2016-07-18T22:44:42.751Z"
+		}],
+		"description": null
+	}, {
+		"intent": "Maitre_D",
+		"created": "2016-07-18T22:44:42.751Z",
+		"examples": [{
+			"text": "call the manager",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "get me a person",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "I don't want to speak with a robot",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "I dont want to talk to a computer",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "I want to speak to a human",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "I want to speak to a person",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "I want to talk to the manager",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "maitre d",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "maitre d'hotel",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "representative",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "talk to a human",
+			"created": "2016-07-18T22:44:42.751Z"
+		}],
+		"description": null
+	}, {
+		"intent": "Reservations",
+		"created": "2016-07-18T22:44:42.751Z",
+		"examples": [{
+			"text": "book reservation",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "can i book a table for tonight",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "can i make a reservation",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "can you accommodate 6 people",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "can you reserve a table for me",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "i'd like to book a table",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "i need a table for two people for wednesday",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "i want a table for four at 7",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "i want a table for two for tonight",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "i want to make a reservation",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "i want to make a reservation for four",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "i would like a booking for four people",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "reservation for 5 please",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "reservation for six",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "reservation for tonight",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "reserve a table four of us",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "special day booking",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "table for 2 tonight",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "will you be open for christmas",
+			"created": "2016-07-18T22:44:42.751Z"
+		}],
+		"description": null
+	}, {
+		"intent": "Specials_of_the_Day",
+		"created": "2016-07-18T22:44:42.751Z",
+		"examples": [{
+			"text": "any specials today",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "can you tell me the specials of the day",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "do you have any specials tonight",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "do you have special entrees",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "do you have specials",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "specials for tomorrow",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "specials of the day please",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "tell me about the specials",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "what are the specials",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "what are the specials of the day",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "what do you have for special of the day",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "what's good today",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "what will be the specials on friday",
+			"created": "2016-07-18T22:44:42.751Z"
+		}],
+		"description": null
+	}, {
+		"intent": "Thanks",
+		"created": "2016-07-18T22:44:42.751Z",
+		"examples": [{
+			"text": "i appreciate it",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "many thanks",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "much appreciated",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "thanks",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "thank you",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "thank you very much",
+			"created": "2016-07-18T22:44:42.751Z"
+		}, {
+			"text": "that's nice of you",
+			"created": "2016-07-18T22:44:42.751Z"
+		}],
+		"description": null
+	}],
+	"entities": [{
+		"entity": "days_of_the_week",
+		"values": [{
+			"value": "friday",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["fri", "fridays"]
+		}, {
+			"value": "monday",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["mon", "mondays"]
+		}, {
+			"value": "saturday",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["sat", "saturdays"]
+		}, {
+			"value": "sunday",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["sun", "sundays"]
+		}, {
+			"value": "thursday",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["thur", "thurs", "thursdays"]
+		}, {
+			"value": "tuesday",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["tue", "tues", "tuesdays"]
+		}, {
+			"value": "wednesday",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["wed", "wednesdays", "weds"]
+		}],
+		"created": "2016-07-18T22:44:42.751Z",
+		"open_list": false,
+		"description": null
+	}, {
+		"entity": "diets",
+		"values": [{
+			"value": "kosher",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null
+		}, {
+			"value": "vegan",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null
+		}, {
+			"value": "vegetarian",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null
+		}, {
+			"value": "gluten free",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["gluten-free"]
+		}, {
+			"value": "halal",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["hallal"]
+		}],
+		"created": "2016-07-18T22:44:42.751Z",
+		"open_list": false,
+		"description": null
+	}, {
+		"entity": "holidays",
+		"values": [{
+			"value": "halloween",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null
+		}, {
+			"value": "labor day",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null
+		}, {
+			"value": "memorial day",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null
+		}, {
+			"value": "christmas",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["christmas day", "x man day", "xmas", "x mas", "x-mas", "x-mas day", "xmas day"]
+		}, {
+			"value": "christmas eve",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["x mas eve", "x-mas eve", "xmas eve"]
+		}, {
+			"value": "independence day",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["7/4", "fourth of july", "july 4", "july 4th", "july fourth"]
+		}, {
+			"value": "new years",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["1/1", "jan 1", "jan 1st", "jan first", "january 1", "january 1st", "january first", "new year", "new year day", "new years day"]
+		}, {
+			"value": "new years eve",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["12-31", "12/31", "dec 31", "dec 31st", "new year's eve"]
+		}, {
+			"value": "thanksgiving",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["turkey day"]
+		}, {
+			"value": "valentine's day",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["valentine day", "valentines day"]
+		}],
+		"created": "2016-07-18T22:44:42.751Z",
+		"open_list": false,
+		"description": null
+	}, {
+		"entity": "landmarks",
+		"values": [{
+			"value": "brooklyn",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null
+		}, {
+			"value": "queens",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null
+		}, {
+			"value": "empire state building",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["empire state"]
+		}, {
+			"value": "times square",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["time sqaure", "time square", "times sqaure"]
+		}, {
+			"value": "world trade center",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["freedom tower", "ground zero", "trade center", "world trade center"]
+		}],
+		"created": "2016-07-18T22:44:42.751Z",
+		"open_list": false,
+		"description": null
+	}, {
+		"entity": "numbers",
+		"values": [{
+			"value": "1",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["one"]
+		}, {
+			"value": "10",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["ten"]
+		}, {
+			"value": "11",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["eleven"]
+		}, {
+			"value": "2",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["two"]
+		}, {
+			"value": "3",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["three"]
+		}, {
+			"value": "4",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["four"]
+		}, {
+			"value": "5",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["five"]
+		}, {
+			"value": "6",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["six"]
+		}, {
+			"value": "7",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["seven"]
+		}, {
+			"value": "8",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["eight"]
+		}, {
+			"value": "9",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["nine"]
+		}],
+		"created": "2016-07-18T22:44:42.751Z",
+		"open_list": false,
+		"description": null
+	}, {
+		"entity": "reply",
+		"values": [{
+			"value": "no",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["definitely not", "don't think so", "dont think so", "i think not", "nope", "not at this time", "not now"]
+		}, {
+			"value": "yes",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["definitely", "go for it", "let's do it", "ok", "please", "sure", "why not", "yeah", "yes", "you bet", "you betcha"]
+		}],
+		"created": "2016-07-18T22:44:42.751Z",
+		"open_list": false,
+		"description": null
+	}, {
+		"entity": "time",
+		"values": [{
+			"value": "midnight",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null
+		}, {
+			"value": "noon",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null
+		}, {
+			"value": "10 AM",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["10am"]
+		}, {
+			"value": "10 PM",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": [" 10pm", "10 pm"]
+		}, {
+			"value": "11 AM",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["11am"]
+		}, {
+			"value": "11 PM",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["11pm"]
+		}, {
+			"value": "12 AM",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["12am"]
+		}, {
+			"value": "12 PM",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["12pm"]
+		}, {
+			"value": "1 AM",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["1am"]
+		}, {
+			"value": "1 PM",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["1pm"]
+		}, {
+			"value": "2 AM",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["2am"]
+		}, {
+			"value": "2 PM",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["2pm"]
+		}, {
+			"value": "3 AM",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["3am"]
+		}, {
+			"value": "3 PM",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["3pm"]
+		}, {
+			"value": "4 AM",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["4am"]
+		}, {
+			"value": "4 PM",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["4pm", "4 pm"]
+		}, {
+			"value": "5 AM",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["5am"]
+		}, {
+			"value": "5 PM",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["5pm", "5 pm"]
+		}, {
+			"value": "6 AM",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["6am"]
+		}, {
+			"value": "6 PM",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": [" 6pm", "6 pm"]
+		}, {
+			"value": "7 AM",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["7am"]
+		}, {
+			"value": "7 PM",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": [" 7pm", "7 pm"]
+		}, {
+			"value": "8 AM",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["8am"]
+		}, {
+			"value": "8 PM",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": [" 8pm", "8 pm"]
+		}, {
+			"value": "9 AM",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": ["9am"]
+		}, {
+			"value": "9 PM",
+			"created": "2016-07-18T22:44:42.751Z",
+			"metadata": null,
+			"synonyms": [" 9pm", "9 pm"]
+		}],
+		"created": "2016-07-18T22:44:42.751Z",
+		"open_list": false,
+		"description": null
+	}],
+	"language": "en",
+	"metadata": null,
+	"modified": "2016-07-18T23:00:58.631Z",
+	"created_by": null,
+	"description": "This is a bot for reservations, hours, directions, specials, diets.",
+	"modified_by": null,
+	"dialog_nodes": [{
+		"go_to": null,
+		"output": {},
+		"parent": "node_11_1468342750378",
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "@reply:yes",
+		"description": null,
+		"dialog_node": "node_12_1468343081757",
+		"previous_sibling": null
+	}, {
+		"go_to": null,
+		"output": {},
+		"parent": "node_9_1467832280744",
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "@reply:no",
+		"description": null,
+		"dialog_node": "node_12_1467834388463",
+		"previous_sibling": "node_11_1467834369868"
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "Alright, let me confirm: you want a table for @numbers people at @time on @days_of_the_week?"
+		},
+		"parent": null,
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "#Reservations && @days_of_the_week && @time && @numbers",
+		"description": null,
+		"dialog_node": "node_25_1467979140645",
+		"previous_sibling": "node_11_1468342750378"
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "For @days_of_the_week got it. What time?"
+		},
+		"parent": "node_32_1467979482238",
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "@days_of_the_week",
+		"description": null,
+		"dialog_node": "node_43_1467981237336",
+		"previous_sibling": null
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "For parties larger than 4 we require additional information. Would you like to speak to our Maitre D?"
+		},
+		"parent": "node_37_1467980587016",
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "@numbers > 4",
+		"description": null,
+		"dialog_node": "node_3_1468341302160",
+		"previous_sibling": null
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "For parties larger than 4, we require additional information. Would you like to speak to our Maitre D?"
+		},
+		"parent": null,
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "#Reservations && @numbers > 4",
+		"description": null,
+		"dialog_node": "node_11_1468342750378",
+		"previous_sibling": "node_20_1467833299541"
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "From Brooklyn, take the L train."
+		},
+		"parent": null,
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "#Directions && @landmarks:brooklyn",
+		"description": null,
+		"dialog_node": "node_17_1468349381550",
+		"previous_sibling": "node_10_1468245002632"
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "From Queens take the Q train."
+		},
+		"parent": null,
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "#Directions && @landmarks:queens",
+		"description": null,
+		"dialog_node": "node_18_1468349499047",
+		"previous_sibling": "node_17_1468349381550"
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "Got you down for @numbers people. See you then."
+		},
+		"parent": "node_41_1467981151782",
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "@numbers < 5",
+		"description": null,
+		"dialog_node": "node_42_1467981190776",
+		"previous_sibling": null
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "Great @days_of_the_week it is. What time?"
+		},
+		"parent": "node_38_1467980815348",
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "@days_of_the_week",
+		"description": null,
+		"dialog_node": "node_39_1467980831059",
+		"previous_sibling": null
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "Great! I've got you down."
+		},
+		"parent": "node_25_1467979140645",
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "@reply:yes",
+		"description": null,
+		"dialog_node": "node_26_1467979248583",
+		"previous_sibling": null
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "Great! Reservation for how many people?"
+		},
+		"parent": null,
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "#Reservations",
+		"description": null,
+		"dialog_node": "node_37_1467980587016",
+		"previous_sibling": "node_32_1467979482238"
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "Great. Reservation for @numbers people. What day?"
+		},
+		"parent": null,
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "#Reservations && @numbers",
+		"description": null,
+		"dialog_node": "node_32_1467979482238",
+		"previous_sibling": "node_31_1467979449060"
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "I am a restaurant bot. I can help you make a reservation, answer questions about our hours of operation, dietary concerns, specials of the day and I can give you directions to visit us."
+		},
+		"parent": null,
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "anything_else",
+		"description": null,
+		"dialog_node": "node_2_1467831978407",
+		"previous_sibling": "node_12_1468329566917"
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "@numbers people. We have you confirmed."
+		},
+		"parent": "node_28_1467979367177",
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "@numbers < 5",
+		"description": null,
+		"dialog_node": "node_33_1467979647636",
+		"previous_sibling": null
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "OK for @days_of_the_week. How many people in your party?"
+		},
+		"parent": "node_31_1467979449060",
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "@days_of_the_week",
+		"description": null,
+		"dialog_node": "node_41_1467981151782",
+		"previous_sibling": null
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "OK. Have a nice day."
+		},
+		"parent": "node_2_1468243505617",
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "@reply:no",
+		"description": null,
+		"dialog_node": "node_4_1468243575457",
+		"previous_sibling": "node_3_1468243530574"
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "OK. How can I help?"
+		},
+		"parent": "node_2_1468243505617",
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "@reply:yes",
+		"description": null,
+		"dialog_node": "node_3_1468243530574",
+		"previous_sibling": null
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "OK. I have you down for @time and we have availability. We'll see you then."
+		},
+		"parent": "node_39_1467980831059",
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "@time",
+		"description": null,
+		"dialog_node": "node_1_1468243000590",
+		"previous_sibling": null
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "OK. Just let me know if I can help with anything else."
+		},
+		"parent": "node_5_1468326945379",
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "@reply:no",
+		"description": null,
+		"dialog_node": "node_21_1468411462002",
+		"previous_sibling": "node_20_1468410703957"
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "OK. Just let me know if I can help with anything else."
+		},
+		"parent": "node_6_1468326952003",
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "@reply:no",
+		"description": null,
+		"dialog_node": "node_19_1468410465470",
+		"previous_sibling": "node_14_1468410311697"
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "OK. Just let me know if I can help with something else."
+		},
+		"parent": "node_31_1468465370889",
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "@reply:no",
+		"description": null,
+		"dialog_node": "node_33_1468465444591",
+		"previous_sibling": "node_32_1468465418293"
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "OK. Reservation for @days_of_the_week at @time. How many people in your party?"
+		},
+		"parent": null,
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "#Reservations && @days_of_the_week && @time",
+		"description": null,
+		"dialog_node": "node_28_1467979367177",
+		"previous_sibling": "node_25_1467979140645"
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "OK. Reservation for @days_of_the_week for @numbers people. What time will you join us?"
+		},
+		"parent": null,
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "#Reservations && @days_of_the_week && @numbers",
+		"description": null,
+		"dialog_node": "node_29_1467979400878",
+		"previous_sibling": "node_28_1467979367177"
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "OK. Reservation for @days_of_the_week. How many people in your party?"
+		},
+		"parent": null,
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "#Reservations && @days_of_the_week",
+		"description": null,
+		"dialog_node": "node_30_1467979430617",
+		"previous_sibling": "node_29_1467979400878"
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "OK. Reservation for @numbers people. What day will you join us?"
+		},
+		"parent": "node_37_1467980587016",
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "@numbers < 5",
+		"description": null,
+		"dialog_node": "node_38_1467980815348",
+		"previous_sibling": "node_3_1468341302160"
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "OK. See you at @time then."
+		},
+		"parent": "node_35_1467979741311",
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "@time",
+		"description": null,
+		"dialog_node": "node_36_1467979762687",
+		"previous_sibling": null
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "OK. Transferring."
+		},
+		"parent": "node_22_1467833484410",
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "@reply:yes",
+		"description": null,
+		"dialog_node": "node_19_1468350024009",
+		"previous_sibling": null
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "OK. Transferring you now."
+		},
+		"parent": "node_3_1468341302160",
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "@reply:yes",
+		"description": null,
+		"dialog_node": "node_4_1468341465870",
+		"previous_sibling": null
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "OK. We have you down for @time. See you then."
+		},
+		"parent": "node_43_1467981237336",
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "@time",
+		"description": null,
+		"dialog_node": "node_44_1467981276824",
+		"previous_sibling": null
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "OK we'll see you at @time then."
+		},
+		"parent": "node_29_1467979400878",
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "@time",
+		"description": null,
+		"dialog_node": "node_34_1467979696980",
+		"previous_sibling": null
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "OK. Would you like me to transfer you to our Maitre D."
+		},
+		"parent": null,
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "#Maitre_D",
+		"description": null,
+		"dialog_node": "node_22_1467833484410",
+		"previous_sibling": "node_18_1468410420138"
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "OK. You can close this window or just let me know what else I can help you with."
+		},
+		"parent": "node_11_1468342750378",
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "@reply:no",
+		"description": null,
+		"dialog_node": "node_13_1468343088446",
+		"previous_sibling": "node_12_1468343081757"
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "OK. You can close this window or just let me know what else I can help you with."
+		},
+		"parent": "node_3_1468341302160",
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "@reply:no",
+		"description": null,
+		"dialog_node": "node_5_1468341481512",
+		"previous_sibling": "node_4_1468341465870"
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "Our hours are\nMonday 8-10\nTuesday 9-9 \nWednesday 8-8 \nThursday 10-11 \nClosed Friday \nSaturday noon to midnight\nClosed Sunday\n\nWould you like to make a reservation?"
+		},
+		"parent": null,
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "#Hours_of_operation",
+		"description": null,
+		"dialog_node": "node_9_1467832280744",
+		"previous_sibling": "node_2_1468326681493"
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "Our hours on $daypick are 10am to midnight. Would you like to make a reservation?"
+		},
+		"parent": "node_3_1468326908317",
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "$daypick:sunday || $daypick:monday || $daypick:tuesday || $daypick:wednesday || $daypick:thursday",
+		"description": null,
+		"dialog_node": "node_6_1468326952003",
+		"previous_sibling": null
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "Our hours on @days_of_the_week are 11am until 2am. Would you like to make a reservation?"
+		},
+		"parent": "node_3_1468326908317",
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "$daypick:friday || $daypick:saturday",
+		"description": null,
+		"dialog_node": "node_5_1468326945379",
+		"previous_sibling": "node_6_1468326952003"
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "Our restaurant is 100% vegetarian and we also offer some vegan options."
+		},
+		"parent": null,
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "#Dietary_considerations && @diets:vegetarian",
+		"description": null,
+		"dialog_node": "node_16_1467833006619",
+		"previous_sibling": "node_15_1467832926743"
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "Our specials for today are Tofurkey dinner with garlic mashed potatoes and gravy and cranberry sauce."
+		},
+		"parent": null,
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "#Specials_of_the_Day",
+		"description": null,
+		"dialog_node": "node_20_1467833299541",
+		"previous_sibling": "node_14_1467832787842"
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "Party of @numbers. What time?"
+		},
+		"parent": "node_30_1467979430617",
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "@numbers < 5",
+		"description": null,
+		"dialog_node": "node_35_1467979741311",
+		"previous_sibling": null
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "Reservation for @time. What day will you join us?"
+		},
+		"parent": null,
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "#Reservations && @time",
+		"description": null,
+		"dialog_node": "node_31_1467979449060",
+		"previous_sibling": "node_29_1468440543627"
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "Sorry. I didn't get that. Let's start over: Do you want to make a reservation?"
+		},
+		"parent": "node_37_1467980587016",
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "anything_else",
+		"description": null,
+		"dialog_node": "node_31_1468465370889",
+		"previous_sibling": "node_38_1467980815348"
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "To get to our restaurant from the Empire State Building, walk to Herald Square and take the N train to Union Square. We're a block south on 13th and Broadway."
+		},
+		"parent": null,
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "#Directions && @landmarks:(empire state building)",
+		"description": null,
+		"dialog_node": "node_8_1468244740357",
+		"previous_sibling": "node_9_1467832280744"
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "To get to our restaurant from the World Trade Center, take the R train a Cortland station uptown to Union Square. We're a block south on 13th and Broadway."
+		},
+		"parent": null,
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "#Directions && @landmarks:(world trade center)",
+		"description": null,
+		"dialog_node": "node_9_1468244913788",
+		"previous_sibling": "node_8_1468244740357"
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "To get to our restaurant from Times Square, take the N train downtown to Union Square. We're a block south on 13th and Broadway."
+		},
+		"parent": null,
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "#Directions && @landmarks:(times square)",
+		"description": null,
+		"dialog_node": "node_10_1468245002632",
+		"previous_sibling": "node_9_1468244913788"
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "We are closed on @holidays. We will reopen regular hours the following day."
+		},
+		"parent": "node_2_1468326681493",
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "@holidays:christmas || @holidays:(new years) || @holidays:thanksgiving",
+		"description": null,
+		"dialog_node": "node_7_1468327284884",
+		"previous_sibling": null
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "We are open on @holidays regular hours"
+		},
+		"parent": "node_2_1468326681493",
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "@holidays",
+		"description": null,
+		"dialog_node": "node_11_1468327744516",
+		"previous_sibling": "node_7_1468327284884"
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "We have lots of vegan options. Try one of our favorites: the quinoa-lentil plate."
+		},
+		"parent": null,
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "#Dietary_considerations && @diets:vegan",
+		"description": null,
+		"dialog_node": "node_15_1467832926743",
+		"previous_sibling": "node_13_1467832618196"
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "We have one gluten-free entree. That's it. You'll take it."
+		},
+		"parent": null,
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "#Dietary_considerations && @diets:(gluten free)",
+		"description": null,
+		"dialog_node": "node_12_1468245517211",
+		"previous_sibling": "node_16_1467833006619"
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "We have various menu options for vegetarians, vegans and those on a gluten free diet. If you have specific needs, just let your waiter know and we will substitute any ingredient."
+		},
+		"parent": null,
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "#Dietary_considerations",
+		"description": null,
+		"dialog_node": "node_14_1467832787842",
+		"previous_sibling": "node_12_1468245517211"
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "We're located on 13th and Broadway. One block south of Union Square."
+		},
+		"parent": null,
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "#Directions",
+		"description": null,
+		"dialog_node": "node_13_1467832618196",
+		"previous_sibling": "node_18_1468349499047"
+	}, {
+		"go_to": null,
+		"output": {
+			"text": "You do not sound happy. Let me transfer you to our Maitre D."
+		},
+		"parent": null,
+		"context": null,
+		"created": "2016-07-18T23:00:03.975Z",
+		"metadata": null,
+		"conditions": "($user.tone.emotion.current == \"anger\")     ||   $user.tone.emotion.current == \"disgust\"  || $user.tone.emotion.current == \"sadness\"",
+		"description": null,
+		"dialog_node": "node_4_1468882804487",
+		"previous_sibling": "node_22_1467833484410"
+	}, {
+		"go_to": null,
+		"output": {
+			"text": {
+				"values": ["You're welcome. Need anything else?", "You got it. Just let me know if you need anything else?", "No problemo. Is that it?"],
+				"selection_policy": "sequential"
+			}
+		},
+		"parent": null,
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "#Thanks",
+		"description": null,
+		"dialog_node": "node_2_1468243505617",
+		"previous_sibling": "node_4_1468882804487"
+	}, {
+		"go_to": null,
+		"output": {
+			"text": {
+				"values": ["So long :)", "See ya", "Bye bye", "Happy trails", "OK, I said good bye already", "Really? We're doing this?"],
+				"selection_policy": "sequential"
+			}
+		},
+		"parent": null,
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "#goodbye",
+		"description": null,
+		"dialog_node": "node_12_1468329566917",
+		"previous_sibling": "node_2_1468243505617"
+	}, {
+		"go_to": {
+			"return": null,
+			"selector": "body",
+			"dialog_node": "node_18_1468410420138"
+		},
+		"output": {},
+		"parent": "node_6_1468326952003",
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "@reply:yes",
+		"description": null,
+		"dialog_node": "node_14_1468410311697",
+		"previous_sibling": null
+	}, {
+		"go_to": {
+			"return": null,
+			"selector": "body",
+			"dialog_node": "node_18_1468410420138"
+		},
+		"output": {
+			"text": ""
+		},
+		"parent": "node_5_1468326945379",
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "@reply:yes",
+		"description": null,
+		"dialog_node": "node_20_1468410703957",
+		"previous_sibling": null
+	}, {
+		"go_to": {
+			"return": null,
+			"selector": "body",
+			"dialog_node": "node_3_1468341302160"
+		},
+		"output": {},
+		"parent": "node_28_1467979367177",
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "@numbers > 4",
+		"description": null,
+		"dialog_node": "node_16_1468344967054",
+		"previous_sibling": "node_33_1467979647636"
+	}, {
+		"go_to": {
+			"return": null,
+			"selector": "body",
+			"dialog_node": "node_3_1468341302160"
+		},
+		"output": {},
+		"parent": "node_30_1467979430617",
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "@numbers > 4",
+		"description": null,
+		"dialog_node": "node_14_1468344173035",
+		"previous_sibling": "node_35_1467979741311"
+	}, {
+		"go_to": {
+			"return": null,
+			"selector": "body",
+			"dialog_node": "node_3_1468341302160"
+		},
+		"output": {},
+		"parent": "node_41_1467981151782",
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "@numbers > 4",
+		"description": null,
+		"dialog_node": "node_15_1468344274916",
+		"previous_sibling": "node_42_1467981190776"
+	}, {
+		"go_to": {
+			"return": null,
+			"selector": "body",
+			"dialog_node": "node_37_1467980587016"
+		},
+		"output": {},
+		"parent": "node_31_1468465370889",
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "@reply:yes",
+		"description": null,
+		"dialog_node": "node_32_1468465418293",
+		"previous_sibling": null
+	}, {
+		"go_to": {
+			"return": null,
+			"selector": "body",
+			"dialog_node": "node_37_1467980587016"
+		},
+		"output": {},
+		"parent": "node_9_1467832280744",
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "@reply:yes",
+		"description": null,
+		"dialog_node": "node_11_1467834369868",
+		"previous_sibling": null
+	}, {
+		"go_to": {
+			"return": null,
+			"selector": "body",
+			"dialog_node": "node_37_1467980587016"
+		},
+		"output": {
+			"text": "OK. let's try the reservation."
+		},
+		"parent": "node_22_1467833484410",
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "@reply:no",
+		"description": null,
+		"dialog_node": "node_21_1468350173406",
+		"previous_sibling": "node_19_1468350024009"
+	}, {
+		"go_to": {
+			"return": null,
+			"selector": "condition",
+			"dialog_node": "node_6_1468326952003"
+		},
+		"output": {
+			"text": ""
+		},
+		"parent": null,
+		"context": {
+			"daypick": "@days_of_the_week"
+		},
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "#Hours_of_operation && @days_of_the_week",
+		"description": null,
+		"dialog_node": "node_3_1468326908317",
+		"previous_sibling": null
+	}, {
+		"go_to": {
+			"return": null,
+			"selector": "condition",
+			"dialog_node": "node_7_1468327284884"
+		},
+		"output": {
+			"text": ""
+		},
+		"parent": null,
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "#Hours_of_operation && @holidays",
+		"description": null,
+		"dialog_node": "node_2_1468326681493",
+		"previous_sibling": "node_3_1468326908317"
+	}, {
+		"go_to": {
+			"return": null,
+			"selector": "user_input",
+			"dialog_node": "node_3_1468341302160"
+		},
+		"output": {
+			"text": "My bad. Let's try again. How many people in your party?"
+		},
+		"parent": "node_25_1467979140645",
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "@reply:no",
+		"description": null,
+		"dialog_node": "node_27_1467979300905",
+		"previous_sibling": "node_26_1467979248583"
+	}, {
+		"go_to": {
+			"return": null,
+			"selector": "user_input",
+			"dialog_node": "node_35_1467979741311"
+		},
+		"output": {
+			"text": "Ok. I can help you make a reservation for $daypick. How many people in your party?"
+		},
+		"parent": null,
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "#Reservations && $daypick",
+		"description": null,
+		"dialog_node": "node_18_1468410420138",
+		"previous_sibling": "node_37_1467980587016"
+	}, {
+		"go_to": {
+			"return": null,
+			"selector": "user_input",
+			"dialog_node": "node_35_1467979741311"
+		},
+		"output": {
+			"text": "Ok. Let's make a reservation for @date. How many people in your party?"
+		},
+		"parent": null,
+		"context": null,
+		"created": "2016-07-18T22:44:42.751Z",
+		"metadata": null,
+		"conditions": "#Reservations && @date",
+		"description": null,
+		"dialog_node": "node_29_1468440543627",
+		"previous_sibling": "node_30_1467979430617"
+	}],
+	"workspace_id": "85b841c0-f06e-4330-823e-083063e984da"
+}
