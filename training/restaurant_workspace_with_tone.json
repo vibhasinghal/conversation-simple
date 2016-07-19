@@ -677,7 +677,7 @@
 	}],
 	"language": "en",
 	"metadata": null,
-	"modified": "2016-07-18T23:00:58.631Z",
+	"modified": "2016-07-19T16:37:16.281Z",
 	"created_by": null,
 	"description": "This is a bot for reservations, hours, directions, specials, diets.",
 	"modified_by": null,
@@ -1345,14 +1345,14 @@
 		"output": {
 			"text": "You do not sound happy. Let me transfer you to our Maitre D."
 		},
-		"parent": null,
+		"parent": "node_7_1468945062942",
 		"context": null,
-		"created": "2016-07-18T23:00:03.975Z",
+		"created": "2016-07-19T16:23:14.868Z",
 		"metadata": null,
-		"conditions": "($user.tone.emotion.current == \"anger\")     ||   $user.tone.emotion.current == \"disgust\"  || $user.tone.emotion.current == \"sadness\"",
+		"conditions": "$user.tone.emotion.current ==  \"anger\"      ||    $user.tone.emotion.current == \"disgust\"    ||   $user.tone.emotion.current == \"sadness\"   ||        $user.tone.emotion.current == \"fear\"",
 		"description": null,
-		"dialog_node": "node_4_1468882804487",
-		"previous_sibling": "node_22_1467833484410"
+		"dialog_node": "node_10_1468945394055",
+		"previous_sibling": null
 	}, {
 		"go_to": null,
 		"output": {
@@ -1368,7 +1368,7 @@
 		"conditions": "#Thanks",
 		"description": null,
 		"dialog_node": "node_2_1468243505617",
-		"previous_sibling": "node_4_1468882804487"
+		"previous_sibling": "node_7_1468945062942"
 	}, {
 		"go_to": null,
 		"output": {
@@ -1417,6 +1417,21 @@
 		"description": null,
 		"dialog_node": "node_20_1468410703957",
 		"previous_sibling": null
+	}, {
+		"go_to": {
+			"return": null,
+			"selector": "body",
+			"dialog_node": "node_2_1467831978407"
+		},
+		"output": {},
+		"parent": "node_7_1468945062942",
+		"context": null,
+		"created": "2016-07-19T16:25:06.580Z",
+		"metadata": null,
+		"conditions": "$user.tone.emotion.current == \"neutral\"   ||       $user.tone.emotion.current == \"joy\"",
+		"description": null,
+		"dialog_node": "node_11_1468945505753",
+		"previous_sibling": "node_10_1468945394055"
 	}, {
 		"go_to": {
 			"return": null,
@@ -1509,6 +1524,21 @@
 		"description": null,
 		"dialog_node": "node_21_1468350173406",
 		"previous_sibling": "node_19_1468350024009"
+	}, {
+		"go_to": {
+			"return": null,
+			"selector": "condition",
+			"dialog_node": "node_10_1468945394055"
+		},
+		"output": {},
+		"parent": null,
+		"context": null,
+		"created": "2016-07-19T16:17:43.769Z",
+		"metadata": null,
+		"conditions": "$user != null && $user.tone.emotion != null && $user.tone.emotion.current != null",
+		"description": null,
+		"dialog_node": "node_7_1468945062942",
+		"previous_sibling": "node_22_1467833484410"
 	}, {
 		"go_to": {
 			"return": null,
