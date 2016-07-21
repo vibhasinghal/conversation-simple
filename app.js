@@ -25,6 +25,7 @@ var watson = require('watson-developer-cloud');  // watson sdk
 
 var app = express();
 var tone_conversation_addon = require("./addons/tone_conversation_detection_addon.js");
+var tone_expression_addon = require("./addons/tone_conversation_expression_addon.js");
 
 // Bootstrap application settings
 app.use(express.static('./public')); // load UI from public folder
@@ -47,6 +48,9 @@ var tone_analyzer = watson.tone_analyzer({
 	version_date: '2016-05-19',
 	version: 'v3'
 });
+
+
+tone_expression_addon.classifierID = 'c115e5x71-nlc-3842';
 
 // Endpoint to be call from the client side
 app.post('/api/message', function(req, res) {
@@ -135,6 +139,7 @@ function updateMessage(response) {
 
 function invokeAddOns_Tone(payload,req,res)
 {
+			lastUserMessage = req.body.input.text;
 			tone_conversation_addon.invokeTone(req.body.input.text, 
 					function(tone_payload){
 						tone_conversation_addon.updateUserTone(payload.context.user, tone_payload);
@@ -144,9 +149,15 @@ function invokeAddOns_Tone(payload,req,res)
 							if (err) {
 								return res.status(err.code || 500).json(err);
 							}
-							return res.json((updateMessage(data)));
+							else {
+							
+							tone_expression_addon.invokeToneExpression(data,lastUserMessage, function(agentTone){
+							return res.json(tone_expression_addon.personalizeMessage((updateMessage(data)),agentTone));
 						});
+							}
+	});
 				});	
 }
 
 module.exports = app;
+var lastUserMessage = "";

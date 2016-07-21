@@ -1,7 +1,27 @@
 module.exports = {
 
 
-  personalizeMessage: function(conversationResponse) {
+  invokeToneExpression: function(conversationResponse, userMessage, callback) {
+  
+  var emotion = conversationResponse.context.user.tone.emotion.current;
+  var textToClassify = userMessage + " " + emotion;
+  tone_natural_language_classifier.classify({
+  text: textToClassify,
+  classifier_id: process.env.TONE_NLC_CLASSIFIER },
+  function(err, response) {
+    if (err)
+    {
+      callback("Neutral");
+    }
+    else
+    {
+      console.log(response.classes[0].class_name);
+      callback(response.classes[0].class_name);
+    }
+});
+  },
+
+  personalizeMessage: function(conversationResponse, agentTone) {
     var personalizedMessage = null;
 
     if (conversationResponse === 'undefined') {
@@ -11,7 +31,7 @@ module.exports = {
         }
 
       };
-      return conversationResponse;
+     return conversationResponse;
     }
 
     if (!conversationResponse.output) {
@@ -21,45 +41,27 @@ module.exports = {
     }
 
         // If a current_emotion (tone) is provided for the user input, prepend the output.text from the Conversation Service with the matching tone expression header
-    if (conversationResponse.context.user.tone.emotion.current) {
-      var toneHeader = getToneExpression(conversationResponse.context.user.tone.emotion.current);
-      if (toneHeader) {
-        personalizedMessage = toneHeader + ' ' + conversationResponse.output.text;
+    if (agentTone != "") {
+        personalizedMessage = expressAgentTone(agentTone, conversationResponse) + '<br/>' + conversationResponse.output.text;
         conversationResponse.output.text = personalizedMessage;
       }
+      return conversationResponse;
     }
-
-    return conversationResponse;
-  }
 
 
 };
 
-function getToneExpression(tone) {
-    /*	var toneExpression = null;
-
-    	switch(tone) {
-        	case "anger":
-    	        toneExpression = "I'm sorry you're frustrated.";
-    	        break;
-    	    case "joy":
-    	    	toneExpression = "Great!";
-    	        break;
-    	    case "sadness":
-    	    	toneExpression = "Cheer up!";
-    	        break;
-    	    case "disgust":
-    	    	toneExpression = "Ugh, I'm sorry you feel that way.";
-    	        break;
-    	    case "fear":
-    	    	toneExpression = "Not to worry, I'm here to help you.";
-    	        break;
-    	    default:
-    	    	console.log('tone is neutral or null ' + emotion_tone);
-    	        toneExpression = "NEUTRAL";
-    	}
-    	return toneExpression;
-    */
-
-  return '';
+function expressAgentTone(agentTone, conversationResponse)
+{
+	return agentTone;
 }
+
+require('dotenv').config({silent: true});
+var watson = require('watson-developer-cloud');  // watson sdk
+
+var tone_natural_language_classifier = watson.natural_language_classifier({
+  url: 'https://gateway.watsonplatform.net/natural-language-classifier/api',
+  username: process.env.TONE_NLC_USERNAME || '<username>',
+  password: process.env.TONE_NLC_PASSWORD || '<password>',
+  version: 'v1'
+});
