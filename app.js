@@ -22,10 +22,11 @@ require('json-query');
 var express = require('express');  // app server
 var bodyParser = require('body-parser');  // parser for post requests
 var watson = require('watson-developer-cloud');  // watson sdk
-
-var app = express();
 var tone_conversation_addon = require("./addons/tone_conversation_detection_addon.js");
 var tone_expression_addon = require("./addons/tone_conversation_expression_addon.js");
+
+
+var app = express();
 
 // Bootstrap application settings
 app.use(express.static('./public')); // load UI from public folder
@@ -40,17 +41,8 @@ var conversation = watson.conversation({
   version: 'v1'
 });
 
-//Create the tone_analyzer service wrapper
-var tone_analyzer = watson.tone_analyzer({
-	url: 'https://gateway.watsonplatform.net/tone-analyzer/api',
-	username: process.env.TONE_ANALYZER_USERNAME,
-	password: process.env.TONE_ANALYZER_PASSWORD,  
-	version_date: '2016-05-19',
-	version: 'v3'
-});
 
-
-tone_expression_addon.classifierID = 'c115e5x71-nlc-3842';
+var lastUserMessage = "";
 
 // Endpoint to be call from the client side
 app.post('/api/message', function(req, res) {
@@ -87,8 +79,10 @@ app.post('/api/message', function(req, res) {
 			
 			// USER - if there is no user in the context, initialize one and add to the context
 			if(typeof req.body.context.user == 'undefined'){
-				var emptyUser = tone_conversation_addon.initToneContext(tone_analyzer);
+				//var emptyUser = tone_conversation_addon.initToneContext(tone_analyzer);
+				var emptyUser = tone_conversation_addon.initToneContext();
 				payload.context = extend(payload.context, { emptyUser });
+				console.log("app: payload is " + JSON.stringify(payload,2,null));
 				invokeAddOns_Tone(payload,req,res);
 	
 		}
@@ -98,7 +92,11 @@ app.post('/api/message', function(req, res) {
               } 
 		// If there is no context, create it and add a user object to it
 		else {
-			payload.context = tone_conversation_addon.initToneContext(tone_analyzer);
+			//payload.context = tone_conversation_addon.initToneContext(tone_analyzer);
+			payload.context = tone_conversation_addon.initToneContext();
+			
+			console.log("just prior to error - invokeAddOns_Tone");
+			console.log("payload is " + JSON.stringify(payload,2,null));
 			invokeAddOns_Tone(payload,req,res);
 		}	
 
@@ -139,25 +137,26 @@ function updateMessage(response) {
 
 function invokeAddOns_Tone(payload,req,res)
 {
-			lastUserMessage = req.body.input.text;
-			tone_conversation_addon.invokeTone(req.body.input.text, 
-					function(tone_payload){
-						tone_conversation_addon.updateUserTone(payload.context.user, tone_payload);
+	lastUserMessage = req.body.input.text;
 
-						// Send the input to the conversation service
-						conversation.message(payload, function(err, data) {
-							if (err) {
-								return res.status(err.code || 500).json(err);
-							}
-							else {
-							
-							tone_expression_addon.invokeToneExpression(data,lastUserMessage, function(agentTone){
+	tone_conversation_addon.invokeTone(req.body.input.text, 
+		function(tone_payload){
+			tone_conversation_addon.updateUserTone(payload.context.user, tone_payload);
+	
+			// Send the input to the conversation service
+			conversation.message(payload, function(err, data) {
+				if (err) {
+					return res.status(err.code || 500).json(err);
+				}
+				else {
+					tone_expression_addon.invokeToneExpression(data,lastUserMessage, 
+						function(agentTone){
 							return res.json(tone_expression_addon.personalizeMessage((updateMessage(data)),agentTone));
-						});
-							}
-	});
-				});	
+					});
+				}
+			});
+	});	
 }
 
 module.exports = app;
-var lastUserMessage = "";
+

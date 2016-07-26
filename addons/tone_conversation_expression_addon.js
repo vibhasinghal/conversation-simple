@@ -1,27 +1,55 @@
-module.exports = {
+require('dotenv').config({silent: true});
+var watson = require('watson-developer-cloud');  // watson sdk
 
-
-  invokeToneExpression: function(conversationResponse, userMessage, callback) {
-  
-  var emotion = conversationResponse.context.user.tone.emotion.current;
-  var textToClassify = userMessage + " " + emotion;
-  tone_natural_language_classifier.classify({
-  text: textToClassify,
-  classifier_id: process.env.TONE_NLC_CLASSIFIER },
-  function(err, response) {
-    if (err)
-    {
-      callback("Neutral");
-    }
-    else
-    {
-      console.log(response.classes[0].class_name);
-      callback(response.classes[0].class_name);
-    }
+/**
+ * The tone_natural_language_classifier is an instance of Watson NLC that has been trained
+ * on 
+ */
+var tone_natural_language_classifier = watson.natural_language_classifier({
+  url: 'https://gateway.watsonplatform.net/natural-language-classifier/api',
+  username: process.env.TONE_NLC_USERNAME || '<username>',
+  password: process.env.TONE_NLC_PASSWORD || '<password>',
+  version: 'v1'
 });
-  },
 
-  personalizeMessage: function(conversationResponse, agentTone) {
+
+/**
+ * 
+ * @param conversationResponse
+ * @param userMessage
+ * @param callback
+ * @returns
+ */
+function invokeToneExpression (conversationResponse, userMessage, callback) {
+	  var emotion = conversationResponse.context.user.tone.emotion.current;
+	  var textToClassify = userMessage + " " + emotion;
+	  tone_natural_language_classifier.classify({
+		  text: textToClassify,
+		  classifier_id: process.env.TONE_NLC_CLASSIFIER },
+		  function(err, response) {
+			  if (err)
+			  {
+				  callback("Neutral");
+			  }
+			  else
+			  {
+				  var toneExpressionClasses = response.classes;
+				  var toneClassWithHighestConfidence = toneExpressionClasses[0];
+				  
+				  console.log("invokeToneExpression: tone class with highest confidence: " + toneClassWithHighestConfidence);
+				  callback(toneClassWithHighestConfidence.class_name);
+			  }
+		  });
+}
+
+/**
+ * 
+ * @param conversationResponse
+ * @param agentTone
+ * @returns
+ */
+
+function personalizeMessage (conversationResponse, agentTone) {
     var personalizedMessage = null;
 
     if (conversationResponse === 'undefined') {
@@ -44,24 +72,28 @@ module.exports = {
     if (agentTone != "") {
         personalizedMessage = expressAgentTone(agentTone, conversationResponse) + '<br/>' + conversationResponse.output.text;
         conversationResponse.output.text = personalizedMessage;
-      }
-      return conversationResponse;
     }
+    return conversationResponse;
+}
 
-
-};
-
+/**
+ * 
+ * @param agentTone
+ * @param conversationResponse
+ * @returns
+ */
 function expressAgentTone(agentTone, conversationResponse)
 {
 	return agentTone;
 }
 
-require('dotenv').config({silent: true});
-var watson = require('watson-developer-cloud');  // watson sdk
 
-var tone_natural_language_classifier = watson.natural_language_classifier({
-  url: 'https://gateway.watsonplatform.net/natural-language-classifier/api',
-  username: process.env.TONE_NLC_USERNAME || '<username>',
-  password: process.env.TONE_NLC_PASSWORD || '<password>',
-  version: 'v1'
-});
+
+module.exports = {
+	invokeToneExpression,
+	personalizeMessage
+};
+
+
+
+

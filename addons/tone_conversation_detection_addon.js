@@ -1,7 +1,29 @@
-module.exports = {
+require('dotenv').config({silent: true});
+var watson = require('watson-developer-cloud');  // watson sdk
 
-  initToneContext: function(toneInstance) {
-    toneAnalyzer = toneInstance;
+var tone_analyzer = watson.tone_analyzer({
+	url: 'https://gateway.watsonplatform.net/tone-analyzer/api',
+	username: process.env.TONE_ANALYZER_USERNAME,
+	password: process.env.TONE_ANALYZER_PASSWORD,  
+	version_date: '2016-05-19',
+	version: 'v3'
+});
+
+
+var toneAnalyzer = null;
+var EMOTION_SCORE_THRESHOLD = 0.5;
+var LANGUAGE_SCORE_THRESHOLD = 0.6;
+var SOCIAL_SCORE_THRESHOLD = 0.75;
+
+
+module.exports = {
+  initToneContext,
+  invokeTone,
+  updateUserTone
+};
+
+
+function initToneContext() {
     return {
       'user': {
         'tone': {
@@ -20,26 +42,26 @@ module.exports = {
         }
       }
     };
-  },
+};
 
-
-  invokeTone: function(text, callback) {
-    var toneAnalyzerPayload = {
+function invokeTone(text, callback) {
+	var toneAnalyzerPayload = {
       text: text
     };
 
-    toneAnalyzer.tone(toneAnalyzerPayload,
-            function(err, tone) {
-              if (err) {
-                callback(null);
-              } else {
-                callback(tone);
-              }
-            });
-  },
+	tone_analyzer.tone(toneAnalyzerPayload,
+	    function(err, tone) {
+	      if (err) {
+	        callback(null);
+	      } else {
+	        callback(tone);
+	      }
+    });
+  };
 
 
-  updateUserTone: function(user, toneAnalyzerPayload) {
+  
+function updateUserTone (user, toneAnalyzerPayload) {
     var emotionTone = null;
     var languageTone = null;
     var socialTone = null;
@@ -83,10 +105,8 @@ module.exports = {
       }
     }
     return user;
-  }
-};
-
-
+};  
+  
 function getEmotionProfile(emotionTone) {
   var maxScore = 0;
   var primaryEmotion = null;
@@ -99,7 +119,7 @@ function getEmotionProfile(emotionTone) {
   });
 
     // There is a primary emotion only if the highest score is > 0.5
-  if (maxScore <= emotionScoreCutoff) {
+  if (maxScore <= EMOTION_SCORE_THRESHOLD) {
     primaryEmotion = 'neutral';
   }
 
@@ -110,27 +130,25 @@ function getLanguageProfile(languageTone) {
   var languageProfile = '';
 
   languageTone.tones.forEach(function(lang) {
-    if (lang.score >= languageScoreCutoff) {
+    if (lang.score >= LANGUAGE_SCORE_THRESHOLD) {
       languageProfile += lang.tone_id + ' ';
     }
   });
 
   return languageProfile;
-}
+};
 
 function getSocialProfile(socialTone) {
   var socialProfile = '';
 
   socialTone.tones.forEach(function(social) {
-    if (social.score >= socialScoreCutoff) {
+    if (social.score >= SOCIAL_SCORE_THRESHOLD) {
       socialProfile += social.tone_id + ' ';
     }
   });
 
   return socialProfile;
-}
+};
 
-var toneAnalyzer = null;
-var emotionScoreCutoff = 0.5;
-var languageScoreCutoff = 0.6;
-var socialScoreCutoff = 0.75;
+
+
