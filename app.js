@@ -41,6 +41,7 @@ var conversation = watson.conversation({
   version: 'v1'
 });
 
+console.log("conversation credentials: " + process.env.CONVERSATION_USERNAME + " " + process.env.CONVERSATION_PASSWORD);
 
 var lastUserMessage = "";
 
@@ -63,6 +64,7 @@ app.post('/api/message', function(req, res) {
 
 		// INPUT - check for input in the body of the request 
 		if (req.body.input) {
+			console.log('user input: ' + JSON.stringify(req.body.input,2,null));
 			payload.input = req.body.input;
 		}else{
 			return new Error('Error: no input provided in request.');
@@ -146,12 +148,16 @@ function invokeAddOns_Tone(payload,req,res)
 			// Send the input to the conversation service
 			conversation.message(payload, function(err, data) {
 				if (err) {
+					console.log('watson response error: ' + JSON.stringify(err,2,null));
 					return res.status(err.code || 500).json(err);
 				}
 				else {
+					console.log('watson response: ' + JSON.stringify(data,2,null));
 					tone_expression_addon.invokeToneExpression(data,lastUserMessage, 
 						function(agentTone){
-							return res.json(tone_expression_addon.personalizeMessage((updateMessage(data)),agentTone));
+							console.log("app: client emotion is " + payload.context.user.tone.emotion.current);
+							console.log("app: agent tone is " + agentTone);
+							return res.json(tone_expression_addon.personalizeMessage((updateMessage(data)),agentTone, payload.context.user.tone.emotion.current));
 					});
 				}
 			});

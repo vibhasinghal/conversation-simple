@@ -65,6 +65,8 @@ function updateUserTone (user, toneAnalyzerPayload) {
     var emotionTone = null;
     var languageTone = null;
     var socialTone = null;
+    
+    console.log(JSON.stringify(toneAnalyzerPayload,2,null));
 
 
     if (toneAnalyzerPayload && toneAnalyzerPayload.document_tone) {
@@ -114,7 +116,7 @@ function getEmotionProfile(emotionTone) {
   emotionTone.tones.forEach(function(emotion) {
     if (emotion.score > maxScore) {
       maxScore = emotion.score;
-      primaryEmotion = emotion.tone_id;
+      primaryEmotion = emotion.tone_name.toLowerCase();
     }
   });
 
@@ -131,7 +133,7 @@ function getLanguageProfile(languageTone) {
 
   languageTone.tones.forEach(function(lang) {
     if (lang.score >= LANGUAGE_SCORE_THRESHOLD) {
-      languageProfile += lang.tone_id + ' ';
+      languageProfile += lang.tone_name.toLowerCase() + ' ';
     }
   });
 
@@ -143,7 +145,7 @@ function getSocialProfile(socialTone) {
 
   socialTone.tones.forEach(function(social) {
     if (social.score >= SOCIAL_SCORE_THRESHOLD) {
-      socialProfile += social.tone_id + ' ';
+      socialProfile += social.tone_name.toLowerCase() + ' ';
     }
   });
 
